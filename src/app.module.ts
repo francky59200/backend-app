@@ -3,13 +3,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import * as dotenv from 'dotenv';
 import { DatabaseModule } from './database/database.module';
-import { UsersModule } from './modules/users/users.module';
-import { MissionModule } from './modules/missions/missions.module';
+import { ProductModule } from './modules/products/products.module';
 
 dotenv.config();
 
 @Module({
-  imports: [DatabaseModule, UsersModule, MissionModule],
+  imports: [DatabaseModule, ProductModule],
   controllers: [AppController],
   providers: [AppService],
 })
