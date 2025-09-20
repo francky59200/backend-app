@@ -1,15 +1,13 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import * as dotenv from 'dotenv';
-import { DatabaseModule } from './database/database.module';
-import { ProductModule } from './modules/products/products.module';
+import { Module } from '@nestjs/common'
+import * as dotenv from 'dotenv'
+import { DatabaseModule } from './database/database.module'
+import { MerchantModule } from './modules/merchant.module'
+import { QueueModule } from './modules/queue.module'
+import { QueueClientModule } from './modules/queue-client.module'
 
-dotenv.config();
+dotenv.config()
 
 @Module({
-  imports: [DatabaseModule, ProductModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [DatabaseModule, MerchantModule, QueueModule, QueueClientModule],
 })
 export class AppModule {}
